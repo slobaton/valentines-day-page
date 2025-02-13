@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feliz Día de San Valentín</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #00cc99, #004d33);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      overflow-x: hidden;
+      position: relative;
+    }
+    h1 {
+      font-size: 3.5rem;
+      margin-top: 50px;
+      animation: fadeInDown 2s ease-in-out;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    p {
+      font-size: 1.2rem;
+      margin: 15px 0;
+    }
+    .heart {
+      font-size: 5rem;
+      animation: heartbeat 1.5s infinite;
+      text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+    }
+    .letter {
+      background: rgba(255, 255, 255, 0.3);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      margin: 40px auto;
+      max-width: 700px;
+      transition: transform 0.3s ease;
+    }
+    .letter:hover {
+      transform: scale(1.05);
+    }
+    .button {
+      display: inline-block;
+      padding: 12px 30px;
+      margin-top: 20px;
+      background: #008060;
+      color: #fff;
+      font-size: 1.2rem;
+      text-decoration: none;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: background 0.3s ease;
+    }
+    .button:hover {
+      background: #00cc99;
+    }
+    .kiss {
+      position: absolute;
+      font-size: 4rem;
+      opacity: 1;
+      animation: fadeOut 2s forwards;
+    }
+    .background-image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      z-index: -1;
+      opacity: 1;
+      animation: fadeOut 2s forwards;
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+    @keyframes fadeOut {
+      0% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+  </style>
+  <script>
+    function showKisses() {
+      // Create the background image
+      const bgImage = document.createElement('div');
+      bgImage.classList.add('background-image');
+      bgImage.style.backgroundImage = "url('./image.jpeg')"; // Replace with your image URL
+      document.body.appendChild(bgImage);
+
+      // Add kisses animation
+      for (let i = 0; i < 20; i++) {
+        const kiss = document.createElement('div');
+        kiss.classList.add('kiss');
+        kiss.innerHTML = '😘';
+        kiss.style.left = Math.random() * 100 + 'vw';
+        kiss.style.top = Math.random() * 100 + 'vh';
+        document.body.appendChild(kiss);
+        setTimeout(() => kiss.remove(), 2000);
+      }
+
+      // Remove background image after animation
+      setTimeout(() => bgImage.remove(), 2000);
+    }
+  </script>
+</head>
+<body>
+  <h1>Feliz Día de San Valentín, mi amor ❤️</h1>
+  <p class="heart">💖 💖 💖</p>
+  <div class="letter">
+    <p>MI AMOR,</p>
+    <p>
+      Hoy quiero recordarte cuánto te amo y lo agradecido que estoy por cada momento que compartimos juntos. Eres mi inspiración, mi felicidad y la razón de mis sonrisas diarias.
+    </p>
+    <p>
+      No importa cuántos días pasen, mi amor por ti solo crece. Gracias por ser la persona increíble que eres y por hacer mi vida mejor solo con tu presencia.
+    </p>
+    <p>Con todo mi amor,<br>Sergio Amilcar Lobaton Arcani ( Passionate developer 😉😎 )</p>
+  </div>
+  <a href="#" class="button" onclick="showKisses()">Haz clic para una sorpresa 💖</a>
+</body>
+</html>
